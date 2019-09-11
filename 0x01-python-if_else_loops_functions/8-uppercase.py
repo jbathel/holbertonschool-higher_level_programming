@@ -5,5 +5,5 @@ def uppercase(str):
             c = ord(c) - 32
             print('{:c}'.format(c), end="")
         else:
-            print((c), end="")
+            print('{:c}'.format(c), end="")
     print()
