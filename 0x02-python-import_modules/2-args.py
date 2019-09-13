@@ -8,11 +8,11 @@ def main():
         print('{} arguments.'.format(args))
     elif args == 1:
         print('1 argument:')
-        print('{}: {}'.format(args, argv[args]))
+        print('1: {}'.format(argv[args]))
     if len(argv) > 1:
         print('{} arguments:'.format(args))
-        for args in range(1, args + 1):
-            print('{}: {}'.format(args, argv[args]))
+    for args in range(1, args + 1):
+        print('{}: {}'.format(args, argv[args]))
 
 if __name__ == '__main__':
     main()
