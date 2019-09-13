@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-from easy_print import a
+import easy_print
