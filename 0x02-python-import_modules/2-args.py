@@ -5,7 +5,7 @@ from sys import argv
 def main():
     args = len(argv) - 1
     if args == 0:
-        print('0 arguments.')
+        print('{} arguments.'.format(args))
     elif args == 1:
         print('1 argument:')
         print('{}: {}'.format(args, argv[args]))
