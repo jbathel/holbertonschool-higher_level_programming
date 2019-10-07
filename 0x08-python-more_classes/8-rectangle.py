@@ -64,14 +64,8 @@ class Rectangle:
     def bigger_or_equal(rect_1, rect_2):
         if isinstance(rect_1, Rectangle) is False:
             raise TypeError('rect_1  must be an instance of Rectangle')
-        if
-        raise TypeError('rect_2  must be an instance of Rectangle')
-
-
-
-
-Static method def bigger_or_equal(rect_1, rect_2): that returns the biggest rectangle based on the area
-rect_1 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_1 must be an instance of Rectangle
-rect_2 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_2 must be an instance of Rectangle
-Returns rect_1 if both have the same area value
-You are not allowed to import any module
+        if isinstance(rect_2, Rectangle) is False:
+            raise TypeError('rect_2  must be an instance of Rectangle')
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
