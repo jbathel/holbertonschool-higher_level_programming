@@ -43,6 +43,10 @@ class Rectangle:
 
     def __str__(self):
         my_hash = []
+        if self.__width == 0:
+            return ''
+        if self.__height == 0:
+            return ''
         for i in range(self.__height):
             for i in range(self.__width):
                 my_hash.append('#')
