@@ -43,3 +43,8 @@ OverflowError: cannot convert float infinity to integer
 Add with only one argument
 >>> add_integer(13)
 111
+
+Passing no arguments
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
