@@ -16,3 +16,30 @@ Adding two integers
 Adding two negative integers
 >>> add_integer(-2, -2)
 -4
+
+Adding one negative integer
+>>> add_integer(2, -2)
+0
+
+Adding non int types - a
+>>> add_integer("Hi", 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Adding non int types - b
+>>> add_integer(2, "Hi")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+Adding float type
+>>> add_integer(1.4, 2.3)
+3
+
+Add float overflow
+>>> add_integer(float("inf"), 5)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+Add with only one argument
+>>> add_integer(13)
+111
