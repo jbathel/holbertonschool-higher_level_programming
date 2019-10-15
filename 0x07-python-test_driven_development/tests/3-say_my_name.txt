@@ -1,0 +1,22 @@
+The ``say_my_name`` module
+===========================
+
+Using ``say_my_name``
+---------------------
+
+The say_my_name module supplies one function, say_my_name().
+
+Import say_my_name
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Printing first and last name
+>>> say_my_name('John','Smith')
+My name is John Smith
+
+Printing first name
+>>> say_my_name('John','')
+My name is John 
+
+Empty Strings
+>>> say_my_name('','')
+My name is 
