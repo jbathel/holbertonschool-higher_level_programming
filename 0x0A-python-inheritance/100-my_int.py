@@ -6,4 +6,3 @@ class MyInt(int):
 
     def __ne__(self, other):
         return super().__eq__(other)
-
