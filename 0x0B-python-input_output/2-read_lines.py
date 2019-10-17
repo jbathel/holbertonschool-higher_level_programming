@@ -8,4 +8,4 @@ def read_lines(filename="", nb_lines=0):
 
         else:
             for line in range(nb_lines):
-                print(filename.readlines(), end='')
+                print(filename.readline(), end='')
