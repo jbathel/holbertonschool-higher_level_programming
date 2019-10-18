@@ -5,6 +5,7 @@ def factorial(n):
         result *= i
     return result
 
+
 def pascal_triangle(n):
     triangle = []
     if n <= 0:
