@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This is a Square Module for Square Class
+"""
 from models.rectangle import Rectangle
 
 
@@ -24,10 +27,12 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
+        """Method for representation of square"""
         return ('[Square] ({}) {}/{} - {}'.format
                 (self.id, self.x, self.y, self.width))
 
     def update(self, *args, **kwargs):
+        """Method for updating attributes"""
         if args:
             attributes = ['id', 'size', 'x', 'y']
             for i, arg in enumerate(args):
@@ -39,5 +44,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        dictionary = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        """Method for creating dictionary of Square Attributes"""
+        dictionary = {'id': self.id, 'size': self.size,
+                      'x': self.x, 'y': self.y}
         return dictionary

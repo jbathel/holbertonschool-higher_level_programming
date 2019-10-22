@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This is a Base Module for Base Class
+"""
 import json
 
 
@@ -16,12 +19,14 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Static method for to_json_string"""
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Class method for saving to a file"""
         if list_objs is None:
             my_list = []
         else:
@@ -33,12 +38,14 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
+        """Static method for from_json_string"""
         if json_string is None:
             return "[]"
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """Class method to create an instance"""
         if cls.__name__ == 'Square':
             dummy = cls(1)
             dummy.update(**dictionary)
@@ -50,6 +57,7 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
+        """Class method for loading instances from file"""
         empty = []
 
         try:

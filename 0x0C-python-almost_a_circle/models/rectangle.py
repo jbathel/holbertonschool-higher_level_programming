@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This is a Rectangle Module for Rectangle Class
+"""
 from models.base import Base
 
 
@@ -84,10 +87,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """Method to represent Rectangle Class"""
         return ('[Rectangle] ({}) {}/{} - {}/{}'.format
                 (self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
+        """Method to update attributes of instance"""
         if args:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i, arg in enumerate(args):
@@ -99,6 +104,7 @@ class Rectangle(Base):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """Method to create dictionary of attributes"""
         dictionary = {'id': self.id, 'width': self.__width,
-                'height': self.__height, 'x': self.__x, 'y': self.__y}
+                      'height': self.__height, 'x': self.__x, 'y': self.__y}
         return dictionary
