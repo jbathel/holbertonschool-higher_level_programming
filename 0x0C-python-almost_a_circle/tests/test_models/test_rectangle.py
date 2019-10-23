@@ -175,7 +175,7 @@ class TestRectangle(unittest.TestCase):
         output = StringIO()
         sys.stdout = output
         r1 = Rectangle(10, 10, 10, 10)
-        r1.update(x=1, height=2, y=3, width=4, banu=89)
+        r1.update(x=1, height=2, y=3, width=4, jessica=82)
         print(r1)
         sys.stdout = sys.__stdout__
         assert output.getvalue() == "[Rectangle] (1) 1/3 - 4/2\n"

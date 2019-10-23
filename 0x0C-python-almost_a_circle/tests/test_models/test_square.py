@@ -168,7 +168,7 @@ class TestSquare(unittest.TestCase):
         output = StringIO()
         sys.stdout = output
         r1 = Square(2, 2, 2, 2)
-        r1.update(id=1, x=1, size=2, y=3, banu=89)
+        r1.update(id=1, x=1, size=2, y=3, jessica=82)
         print(r1)
         sys.stdout = sys.__stdout__
         assert output.getvalue() == "[Square] (1) 1/3 - 2\n"
