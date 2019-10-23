@@ -179,7 +179,6 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             4, 2, 0, [1, 2, 3, 4], 12
         )
-
     def test_check_y_TypeError_(self):
         """Test TypeError for y in Rectangle"""
         self.assertRaisesRegex(
@@ -189,60 +188,6 @@ class RectangleTest(unittest.TestCase):
             4, 2, 0, -6, 12
         )
 
-    def test_update(self):
-        """Test update"""
-        output = StringIO()
-        sys.stdout = output
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(89)
-        r1.update(89, 2)
-        r1.update(89, 2, 3)
-        r1.update(89, 2, 3, 4)
-        r1.update(89, 2, 3, 4, 5)
-        print(r1)
-        sys.stdout = sys.__stdout__
-        assert output.getvalue() == "[Rectangle] (89) 4/5 - 2/3\n"
-
-    def test_update_extra(self):
-        """Update with extra parameters"""
-        output = StringIO()
-        sys.stdout = output
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(89, 2, 3, 4, 5, 6, 7)
-        print(r1)
-        sys.stdout = sys.__stdout__
-        assert output.getvalue() == "[Rectangle] (89) 4/5 - 2/3\n"
-
-    def test_update_no_param(self):
-        """Update with extra parameters"""
-        output = StringIO()
-        sys.stdout = output
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update()
-        print(r1)
-        sys.stdout = sys.__stdout__
-        assert output.getvalue() == "[Rectangle] (1) 10/10 - 10/10\n"
-
-    def test_kwargs(self):
-        """Test kwargs"""
-        output = StringIO()
-        sys.stdout = output
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(x=1, height=2, y=3, width=4)
-        print(r1)
-        sys.stdout = sys.__stdout__
-        assert output.getvalue() == "[Rectangle] (1) 1/3 - 4/2\n"
-
-    def test_kwargs_extra(self):
-        """Test kwargs with extra parameter"""
-        output = StringIO()
-        sys.stdout = output
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(x=1, height=2, y=3, width=4, banu=89)
-        print(r1)
-        sys.stdout = sys.__stdout__
-        assert output.getvalue() == "[Rectangle]"
-
     def test_to_dictionary(self):
         """Test conversion to dictionary"""
         r = Rectangle(1, 1, 1, 1, 1)
@@ -250,26 +195,3 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r.to_dictionary(), d)
         r.my_fun_new_attr = 42
         self.assertEqual(r.to_dictionary(), d)
-
-    def test_inputs(self):
-        """Test inputs"""
-        b1 = Base()
-        result = b1.id
-        self.assertIs(result, 1)
-        b2 = Base()
-        result = b2.id
-        self.assertIs(result, 2)
-        b3 = Base(12)
-        result = b3.id
-        self.assertIs(result, 12)
-
-    def test_inputs(self):
-        """Test inputs"""
-        r1 = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual(str(r1), "[Rectangle] (5) 3/4 - 1/2")
-        r2 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(str(r2), "[Rectangle] (1) 3/4 - 1/2")
-        r3 = Rectangle(1, 2, 3)
-        self.assertEqual(str(r3), "[Rectangle] (2) 3/0 - 1/2")
-        r4 = Rectangle(1, 2)
-        self.assertEqual(str(r4), "[Rectangle] (3) 0/0 - 1/2")
