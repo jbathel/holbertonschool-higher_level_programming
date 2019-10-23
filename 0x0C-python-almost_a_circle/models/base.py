@@ -20,9 +20,9 @@ class Base():
     @staticmethod
     def to_json_string(list_dictionaries):
         """Static method for to_json_string"""
-        if list_dictionaries is None:
-            return "[]"
-        return json.dumps(list_dictionaries)
+        if list_dictionaries is not None and list_dictionaries:
+            return json.dumps(list_dictionaries)
+        return "[]"
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -40,10 +40,9 @@ class Base():
     def from_json_string(json_string):
         """Static method for from_json_string"""
         empty = []
-        if json_string is None or not json_string:
-            return empty
-        else:
+        if json_string is not None and json_string:
             return json.loads(json_string)
+        return empty
 
     @classmethod
     def create(cls, **dictionary):
