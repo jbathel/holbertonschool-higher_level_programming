@@ -10,6 +10,6 @@ Base = declarative_base()
 class City(Base):
     """Defines Class States"""
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, unique=True, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('state.id'), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
