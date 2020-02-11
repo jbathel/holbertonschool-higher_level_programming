@@ -1,11 +1,10 @@
 #!/usr/bin/node
 
-const Rectangle = require('./4-rectangle');
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
+const originalSquare = require('./5-square');
+
+class Square extends originalSquare {
   }
-}
+
 Square.prototype.charPrint = function (c) {
   if (!c) {
     c = 'X';
