@@ -3,7 +3,7 @@
 const originalSquare = require('./5-square');
 
 class Square extends originalSquare {
-  }
+}
 
 Square.prototype.charPrint = function (c) {
   if (!c) {
