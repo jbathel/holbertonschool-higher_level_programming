@@ -10,9 +10,9 @@ request.get(process.argv[2], function (error, request, body) {
     const results = {};
     for (let i = 0; i < tasks.length; i++) {
       if (tasks[i].completed) {
-        results[tasks[i].userId] += 1;
-      } else {
-        results[tasks[i].userId] = 0;
+        if (!(tasks[i].userId in results)) {
+          results[tasks[i].userId] = 0;
+        } results[tasks[i].userId] += 1;
       }
     }
     console.log(results);
